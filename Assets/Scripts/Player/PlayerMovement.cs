@@ -7,8 +7,14 @@ public class PlayerMovement : MonoBehaviour {
     public float speed = 3f;
     public Rigidbody2D rb2d;
     public Animator animator;
+    public Color newColor;
+    public SpriteRenderer _spriteRenderer;
 
     Vector2 movement;
+
+    void Start() {
+        //_spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
 
     void Update() {
@@ -16,6 +22,7 @@ public class PlayerMovement : MonoBehaviour {
         movement.y = Input.GetAxisRaw("Vertical");
 
         SetAnimationUp();
+        //ChangeColor();
     }
 
     void FixedUpdate() {
@@ -31,5 +38,11 @@ public class PlayerMovement : MonoBehaviour {
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
     }
+
+    /*void ChangeColor() {
+        if(Input.GetKeyDown(KeyCode.X)) {
+            _spriteRenderer.color = Color.red;
+        }
+    }*/
     
 }
