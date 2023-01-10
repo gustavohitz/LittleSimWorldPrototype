@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour {
     Vector2 movement;
 
     void Start() {
-        //_spriteRenderer = GetComponent<SpriteRenderer>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
 
@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour {
         movement.y = Input.GetAxisRaw("Vertical");
 
         SetAnimationUp();
-        //ChangeColor();
+        ChangeColor();
     }
 
     void FixedUpdate() {
@@ -39,10 +39,10 @@ public class PlayerMovement : MonoBehaviour {
         animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
-    /*void ChangeColor() {
+    void ChangeColor() {
         if(Input.GetKeyDown(KeyCode.X)) {
             _spriteRenderer.color = Color.red;
         }
-    }*/
+    }
     
 }
