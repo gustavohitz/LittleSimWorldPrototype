@@ -15,11 +15,14 @@ public class ShopManager : MonoBehaviour {
     public Image redOutfitImage;
     public Image blueOutfitImage;
     public Image greyOutfitImage;
+    public Image originalOutfitImage;
+    public AudioClip coinSFX;
     
     void Start() {
         redOutfitImage.enabled = false;
         blueOutfitImage.enabled = false;
         greyOutfitImage.enabled = false;
+        originalOutfitImage.enabled = true;
 
         currentCoins = startCoins;
         txtCoins.text = currentCoins.ToString();
@@ -43,6 +46,7 @@ public class ShopManager : MonoBehaviour {
     void SubtractCoins(int price) {
         currentCoins -= price;
         txtCoins.text = currentCoins.ToString();
+        AudioManager.instance.PlayOneShot(coinSFX);
     }
     public void ActivateRedOutfitButton() {
         redOutfitImage.enabled = true;

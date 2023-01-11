@@ -55,4 +55,7 @@ public class PlayerMovement : MonoBehaviour {
     public void ChangeToGreyOutfit() {
         spriteRenderer.color = Color.grey;
     }
+    public void ChangeToOriginalOutfit() {
+        spriteRenderer.color = Color.white;
+    }
 }
