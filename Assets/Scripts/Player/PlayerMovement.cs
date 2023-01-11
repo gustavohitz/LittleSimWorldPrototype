@@ -8,12 +8,12 @@ public class PlayerMovement : MonoBehaviour {
     public Rigidbody2D rb2d;
     public Animator animator;
     public Color newColor;
-    public SpriteRenderer _spriteRenderer;
+    public SpriteRenderer spriteRenderer;
 
     Vector2 movement;
 
     void Start() {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
 
@@ -22,7 +22,6 @@ public class PlayerMovement : MonoBehaviour {
         movement.y = Input.GetAxisRaw("Vertical");
 
         SetAnimationUp();
-        ChangeColor();
     }
 
     void FixedUpdate() {
@@ -47,10 +46,13 @@ public class PlayerMovement : MonoBehaviour {
         
     }
 
-    void ChangeColor() {
-        if(Input.GetKeyDown(KeyCode.X)) {
-            _spriteRenderer.color = Color.red;
-        }
+    public void ChangeToRedOutfit() {
+        spriteRenderer.color = Color.red;
     }
-    
+    public void ChangeToBlueOutfit() {
+        spriteRenderer.color = Color.blue;
+    }
+    public void ChangeToGreyOutfit() {
+        spriteRenderer.color = Color.grey;
+    }
 }
