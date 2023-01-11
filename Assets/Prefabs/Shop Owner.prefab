@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1692404992}
   - component: {fileID: 1692404993}
   - component: {fileID: 1692404994}
+  - component: {fileID: 4004067403009369086}
   m_Layer: 0
   m_Name: Shop Owner
   m_TagString: Untagged
@@ -159,3 +160,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4004067403009369086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2818096642964279041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de2ed9896080844909ea05ecd680cbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canTalkToPlayer: 0
+  canvas: {fileID: 0}

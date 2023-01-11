@@ -4,29 +4,38 @@ using UnityEngine;
 
 public class ShopOwnerBase : MonoBehaviour {
 
-    private string _tagToFind = "Player";
-    private ActivateShopCanvas _activateShopCanvas;
+    private string _tagToCheck = "Player";
+    private ActivateCanvas _activateCanvas;
     
     public bool canTalkToPlayer = false;
+    public GameObject canvas;
 
 
     void Start() {
-        _activateShopCanvas = GetComponent<ActivateShopCanvas>();
+        _activateCanvas = GetComponent<ActivateCanvas>();
+        canvas.SetActive(false);
     }
     void Update() {
         TalkToPlayer();
     }
     void OnTriggerEnter2D(Collider2D other) {
-        if(other.CompareTag(_tagToFind)) {
+        if(other.CompareTag(_tagToCheck)) {
             canTalkToPlayer = true;
+        }
+    }
+    void OnTriggerExit2D(Collider2D other) {
+        if(other.CompareTag(_tagToCheck)) {
+            canTalkToPlayer = false;
         }
     }
 
     void TalkToPlayer() {
         if(Input.GetKeyDown(KeyCode.Z) && canTalkToPlayer) {
-            _activateShopCanvas.ShowShopCanvas();
-            _activateShopCanvas.PauseTime();
+            canvas.SetActive(true);
+            PauseTime();
         }
     }
-    
+    void PauseTime() {
+        Time.timeScale = 0;
+    }
 }
