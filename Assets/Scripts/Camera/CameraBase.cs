@@ -6,7 +6,7 @@ public class CameraBase : MonoBehaviour {
 
     public Transform target;
 
-    void Update() {
+    void LateUpdate() {
         FollowPlayer();
     }
 

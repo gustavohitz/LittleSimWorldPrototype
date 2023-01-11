@@ -30,13 +30,18 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void MovingPlayer() {
-        rb2d.MovePosition(rb2d.position + movement * speed * Time.fixedDeltaTime);
+        rb2d.MovePosition(rb2d.position + movement.normalized * speed * Time.fixedDeltaTime);
     }
 
     void SetAnimationUp() {
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        if(movement.x == 1 || movement.x == -1 || movement.y == 1 || movement.y == -1) {
+            animator.SetFloat("LastHorizontal", movement.x);
+            animator.SetFloat("LastVertical", movement.y);
+        }
     }
 
     void ChangeColor() {

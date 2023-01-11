@@ -30297,6 +30297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de2ed9896080844909ea05ecd680cbb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canTalkToPlayer: 0
 --- !u!4 &1695449748 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7351155910237267094, guid: 60d7d4f8688ea4e26881c000a3319fa3,
