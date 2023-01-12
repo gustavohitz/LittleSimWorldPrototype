@@ -25316,6 +25316,9 @@ MonoBehaviour:
   blueOutfitImage: {fileID: 790220341}
   greyOutfitImage: {fileID: 1585396433}
   originalOutfitImage: {fileID: 25551148}
+  redButton: {fileID: 328115948}
+  blueButton: {fileID: 1935472358}
+  greyButton: {fileID: 1966611109}
   coinSFX: {fileID: 8300000, guid: 1583b929884254c1391e80f22ae04c63, type: 3}
 --- !u!4 &471748782
 Transform:

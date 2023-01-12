@@ -16,7 +16,12 @@ public class ShopManager : MonoBehaviour {
     public Image blueOutfitImage;
     public Image greyOutfitImage;
     public Image originalOutfitImage;
+    public Button redButton;
+    public Button blueButton;
+    public Button greyButton;
     public AudioClip coinSFX;
+
+    
     
     void Start() {
         redOutfitImage.enabled = false;
@@ -36,6 +41,12 @@ public class ShopManager : MonoBehaviour {
         shopItems[2, 3] = 300;
     }
 
+    void Update() {
+        DeactivateGreyButton();
+        DeactivateBlueButton();
+        DeactivateRedButton();
+    }
+
     public void BuyItems() {
         GameObject refbutton = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
 
@@ -43,6 +54,25 @@ public class ShopManager : MonoBehaviour {
             SubtractCoins(shopItems[2, refbutton.GetComponent<ButtonInfo>().itemID]);
         }
     }
+
+    void DeactivateGreyButton() {
+        if(currentCoins < 300) {
+            greyButton.interactable = false;
+        }
+    }
+
+    void DeactivateBlueButton() {
+        if(currentCoins < 200) {
+            blueButton.interactable = false;
+        }
+    }    
+
+    void DeactivateRedButton() {
+        if(currentCoins < 100) {
+            redButton.interactable = false;
+        }
+    }
+       
     void SubtractCoins(int price) {
         currentCoins -= price;
         txtCoins.text = currentCoins.ToString();
@@ -57,5 +87,4 @@ public class ShopManager : MonoBehaviour {
     public void ActivateGreyOutfitButton() {
         greyOutfitImage.enabled = true;
     }
-
 }
